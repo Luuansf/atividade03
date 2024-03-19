@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lançamento de Notas</title>
+    <script>
+        function calcularMedia() {
+            // Obter o valores dos campos de entrada
+            
+            const prova1 = parseFloat(document.getElementById("prova1").value);
+            const prova2 = parseFloat(document.getElementById("prova2").value);
+            const exame = parseFloat(document.getElementById("exame").value);
+
+            // Calcular a média
+
+            const media = (prova1 + prova2 + exame) /3;
+
+            // Definir a média calculada no campo de entrada somente leitura
+
+            document.getElementById("media").value = media.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Lançamento de Notas</h1>
+    <form>
+        <label for="disciplina">Selecione a disciplina:</label>
+        <select id="disciplina" name="disciplina">
+            <option value="introducao">Introdução à informática</option>
+            <option value="linguagens">Linguagens de Programação</option>
+            <option value="programacao">Programação de Computadores</option>
+        </select>
+        <br>
+        <label for="prova1">Nota da Prova 1:</label>
+        <input type="number" id="prova1" name="prova1" min="0" max="10" required>
+        <br>
+        <label for="prova2">Nota da Prova 2:</label>
+        <input type="number" id="prova2" name="prova2" min="0" max="10" required>
+        <br>
+        <label for="exame">Nota do Exame:</label>
+        <input type="number" id="exame" name="exame" min="0" max="10" required>
+        <br>
+        <label for="media">Média:</label>
+        <input type="text" id="media" name="media" readonly>
+        <br>
+        <label for="faltas">Faltas:</label>
+        <input type="number" id="faltas" name="faltas" min="0" max="16" required>
+        <br>
+        <input type="button" value="Calcular Média" onclick="calcularMedia()">
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>
